@@ -1,0 +1,302 @@
+:root {
+  --font-color: whitesmoke;
+  --background-color: rgb(76, 177, 76);
+  --secondary-color: white;
+  --title-font: 'Sofia', cursive;
+  --font-size: 10px;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  color: var(--font-color);
+  font: var(--title-font);
+  font-size: var(--font-size);
+  vertical-align: baseline;
+  position: relative;
+  background-color: var(--background-color);
+  background-repeat: repeat;
+  background-image: url('../images/giphy.gif');
+}
+
+.container {
+  display: flex;
+  max-width: 100vw;
+  padding: 30px 20px;
+  margin: 0 auto;
+  justify-content: center;
+}
+
+.page-title {
+  font-size: 6.8em;
+  font-family: var(--title-font);
+  position: relative;
+}
+
+.description {
+    font-size: 3.2em;
+    font-family: var(--title-font);
+}
+  
+.gallery {
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.gallery__item {
+    width: calc(25% - 12px);
+    flex: 0 0 auto;
+    margin-bottom: 13px;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    filter: grayscale(100%);
+    transition: all 0.2s ease-in-out;
+    overflow: hidden;
+    cursor: pointer;
+    font: var(--title-font);
+    font-size: var(--font-size);
+    text-align: center;
+    justify-content: center;
+}
+.gallery__item:hover {
+    filter: grayscale(0);
+    background-size: 110%;
+}
+.gallery__item:nth-child(1) {
+    background-image: url("../images/outlines/reg-06.png");
+}
+.gallery__item:nth-child(2) {
+    background-image: url("../images/outlines/reg-07.png");
+}
+.gallery__item:nth-child(3) {
+    background-image: url("../images/outlines/reg-08.png");
+}
+.gallery__item:nth-child(4) {
+    background-image: url("../images/outlines/reg-09.png");
+}
+.gallery__item:nth-child(5) {
+    background-image: url("../images/outlines/reg-10.png");
+}
+.gallery__item:nth-child(6) {
+    background-image: url("../images/outlines/reg-11.png");
+}
+.gallery__item:nth-child(7) {
+    background-image: url("../images/outlines/reg-12.png");
+}
+.gallery__item:nth-child(8) {
+    background-image: url("../images/outlines/reg-13.png");
+}
+.gallery__item:nth-child(9) {
+    background-image: url("../images/outlines/reg-14.png");
+}
+.gallery__item:nth-child(10) {
+    background-image: url("../images/outlines/reg-15.png");
+}
+.gallery__item:nth-child(11) {
+    background-image: url("../images/outlines/reg-16.png");
+}
+.gallery__item:nth-child(12) {
+    background-image: url("../images/outlines/reg-17.png");
+}
+.gallery__item:nth-child(13) {
+    background-image: url("../images/outlines/reg-18.png");
+}
+.gallery__item:nth-child(14) {
+    background-image: url("../images/outlines/reg-19.png");
+}
+.gallery__item:nth-child(15) {
+    background-image: url("../images/outlines/reg-20.png");
+}
+.gallery__item:nth-child(16) {
+    background-image: url("../images/outlines/reg-21.png");
+}
+.gallery__item:nth-child(17) {
+    background-image: url("../images/outlines/reg-22.png");
+}
+.gallery__item:nth-child(18) {
+    background-image: url("../images/outlines/reg-23.png");
+}
+.gallery__item:nth-child(19) {
+    background-image: url("../images/outlines/reg-24.png");
+}
+.gallery__item:nth-child(20) {
+    background-image: url("../images/outlines/reg-25.png");
+}
+.gallery__item:nth-child(21) {
+    background-image: url("../images/outlines/reg-26.png");
+}
+
+.gallery__item div {
+    padding-bottom: 56.25%;
+}
+
+.next-button,
+.prev-button {
+    position: absolute;
+    height: 30px;
+    width: 30px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+.next-button:before, .next-button:after,
+.prev-button:before,
+.prev-button:after {
+    position: absolute;
+    content: "";
+    width: 3px;
+    height: 20px;
+    background-color: var(--secondary-color);
+}
+.next-button.no-link,
+.prev-button.no-link {
+    opacity: 0.2;
+    pointer-events: none;
+}
+
+.next-button {
+    right: 10px;
+}
+.next-button:before {
+    transform: rotate(45deg);
+    right: 15px;
+    top: 12px;
+}
+.next-button:after {
+    transform: rotate(-45deg);
+    right: 15px;
+    top: 0;
+}
+
+.prev-button {
+    left: 10px;
+}
+.prev-button:before {
+    transform: rotate(-45deg);
+    right: 15px;
+    top: 12px;
+}
+.prev-button:after {
+    transform: rotate(45deg);
+    right: 15px;
+    top: 0;
+}
+
+.modal {
+    opacity: 0;
+    pointer-events: none;
+    background-color: rgba(0, 0, 0, 0.646);
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    top: 0;
+    left: 0;
+    transition: opacity 0.1s ease-in-out;
+}
+.modal--open {
+    opacity: 1;
+    pointer-events: all;
+}
+.modal__image {
+    position: absolute;
+    width: 90%;
+    max-width: 1000px;
+    height: auto;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+}
+
+.modal-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    height: 30px;
+    width: 30px;
+    cursor: pointer;
+}
+
+.modal-close:before, .modal-close:after {
+    position: absolute;
+    background-color: white;
+    content: "";
+    top: 0;
+    right: 15px;
+    width: 3px;
+    height: 30px;
+}
+.modal-close:before {
+    transform: rotate(45deg);
+}
+.modal-close:after {
+    transform: rotate(-45deg);
+}
+
+.next-button,
+.prev-button {
+    position: absolute;
+    height: 30px;
+    width: 30px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+.next-button:before, .next-button:after,
+.prev-button:before,
+.prev-button:after {
+    position: absolute;
+    content: "";
+    width: 3px;
+    height: 20px;
+    background-color: var(--secondary-color);
+}
+.next-button.no-link,
+.prev-button.no-link {
+    opacity: 2;
+    pointer-events: none;
+}
+
+.next-button {
+    right: 10px;
+}
+.next-button:before {
+    transform: rotate(45deg);
+    right: 15px;
+    top: 12px;
+}
+.next-button:after {
+    transform: rotate(-45deg);
+    right: 15px;
+    top: 0;
+}
+
+.prev-button {
+    left: 10px;
+}
+.prev-button:before {
+    transform: rotate(-45deg);
+    right: 15px;
+    top: 12px;
+}
+.prev-button:after {
+    transform: rotate(45deg);
+    right: 15px;
+    top: 0;
+}
+
+a:link {
+    color: lightgreen;
+    text-decoration: none;
+  }
+  
+a:visited {
+    color: whitesmoke;
+    text-decoration: none;
+}
+
+a:hover {
+    color: lightgreen;
+    text-decoration: none;
+}
