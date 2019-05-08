@@ -1,0 +1,43 @@
+*, body {
+  margin: 0%;
+  padding: 0%;
+  width: 100vw;
+  height: auto;
+}
+
+.screen {
+  background-color: rgba(49, 156, 250, 0.858);
+}
+
+.italy, img {
+  left: 25vw;
+  width: 50%;
+  height: 100vh;
+  position: relative;
+  display: inline-block;
+}
+
+.hub {
+  animation-name: example;
+  animation-duration: 5s;
+  animation-delay: 1s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes example {
+  0% {
+    background-color: rgba(177, 249, 153, 0.756);
+  }
+  25% {
+    background-color: rgba(153, 204, 249, 0.283);
+  }
+  50% {
+    background-color: rgba(153, 204, 249, 0.865);
+  }
+  100% {
+    background-color: #99ccf9;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
